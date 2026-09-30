@@ -129,7 +129,9 @@ your-product-project/
 | [docs/PLACET_CLAUDE_CODE_GUIDE.md](docs/PLACET_CLAUDE_CODE_GUIDE.md) | AI | Agent delegation protocol |
 | [docs/customization-and-extension.md](docs/customization-and-extension.md) | Maintainers | How to change the flow, add Skills, add Agents |
 | [UPGRADE.md](UPGRADE.md) | Maintainers | Framework upgrades |
-| [docs/github-repo-settings.md](docs/github-repo-settings.md) | Maintainers | GitHub About / Topics / default-branch notes |
+| [CHANGELOG.md](CHANGELOG.md) | Humans | Released versions |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contributors | How to change Skills and open a PR |
+| [docs/github-repo-settings.md](docs/github-repo-settings.md) | Maintainers | GitHub About / Topics notes |
 
 > The root `README.md` used to be both the product intro and the AI rulebook, which meant GitHub visitors saw a 1000+ line internal spec. They are now split: `README.md` is for humans, `PLACET.md` is for Agents.
 

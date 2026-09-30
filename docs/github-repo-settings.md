@@ -35,5 +35,5 @@ placet
 | Item | Suggestion |
 |----|------|
 | License | `LICENSE` (MIT) is already at the repo root; GitHub will detect it |
-| Default branch | The remote default is currently `develop`; for public use, switch to `main` (GitHub Settings → General; do not change the default branch locally on your own) |
-| Releases | Tag stable versions so they match the root `VERSION` file |
+| Default branch | `main` |
+| Releases | Tag stable versions so they match the root `VERSION` file (`v1.0.0`, …). Body: `.github/RELEASE_v1.0.0.md` |

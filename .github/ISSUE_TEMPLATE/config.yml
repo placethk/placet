@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Quick start
+    url: https://github.com/placethk/placet/blob/main/QUICKSTART.md
+    about: Install and first-run steps before filing a bug

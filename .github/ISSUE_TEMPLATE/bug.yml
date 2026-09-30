@@ -1,0 +1,44 @@
+name: Bug report
+description: Something in the pipeline, a Skill, or a script does not work as documented
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search existing issues first. Include commands and paths; do not paste secrets.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Expected vs actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: Commands, Skill name, target-project path (redact if needed)
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: OS
+      options:
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Placet VERSION
+      description: Value of the repo-root VERSION file, or the git tag you installed
+      placeholder: "1.0.0"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or output
+      render: shell

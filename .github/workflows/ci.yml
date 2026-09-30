@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Syntax-check Skill scripts
+        run: |
+          set -e
+          shopt -s nullglob
+          files=(skills/placet-*/scripts/*.js)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No Skill scripts found"
+            exit 1
+          fi
+          for f in "${files[@]}"; do
+            echo "node --check $f"
+            node --check "$f"
+          done
+      - name: Static Skill eval (collect)
+        run: |
+          set -e
+          export PLACET_FRAMEWORK="$GITHUB_WORKSPACE"
+          for skill in skills/placet-*/; do
+            name=$(basename "$skill")
+            echo "eval $name"
+            node skills/placet-skill-eval/scripts/eval-skill.js "$name" --collect >/tmp/eval.json
+          done
