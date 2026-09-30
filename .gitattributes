@@ -1,0 +1,27 @@
+# Normalize line endings to LF for shell scripts and text files.
+# Windows editors that save with CRLF cause bash -c "..." multi-line strings
+# to embed \r characters, which breaks the parser (see tests/test-node-detect.sh
+# Test 11 regression - 27 tests silently skipped when the file had CRLF).
+# * text=auto lets git convert on checkout; eol=lf forces LF on disk.
+
+* text=auto eol=lf
+
+# Shell scripts: LF is mandatory for bash to parse multi-line strings,
+# heredocs, and command substitutions correctly.
+*.sh   text eol=lf
+*.bash text eol=lf
+
+# PowerShell scripts: CRLF is the Windows native convention.
+*.ps1  text eol=crlf
+
+# Markdown and other docs: LF for consistency with shell tooling.
+*.md   text eol=lf
+
+# Binary files: no conversion.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.zip  binary
+*.pdf  binary

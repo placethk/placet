@@ -1,0 +1,38 @@
+# Runtime files (do not commit)
+.claude/settings.local.json
+.claude-collective/metrics/
+.taskmaster/docs/prd.txt
+
+# Node.js
+node_modules/
+
+# Temp files
+*.tmp
+*.bak
+.git_backup/
+
+# Python
+__pycache__/
+*.pyc
+
+# Archives
+*.zip
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+.codegraph
+
+# External skill scratch installs (not committed to the framework repo; copy to ~/.claude/skills/ later)
+skills/codex-ppt/
+skills/image-to-editable-ppt/
+
+# Local scratch: research dumps, PPT drafts, competitor notes. Do not translate or commit.
+notes/
+
